@@ -8,8 +8,11 @@
     b) unable to trace functions which donot include .invoke() for example loading pdf, store in vector db this is not traced by rag here 
 
 4) in rag 2 problems : 
-    a) problem a is still there, problem b is solved 
-    b) but there are individual trace for same pipeline like (1 trace for load, chunk, split and store) 1 trace for (retrieve and fetching.) 
+    a) problem a is still there, 
+    b) problem b is solved 
+    c) but there are individual trace for same pipeline like (1 trace for load, chunk, split and store) 1 trace for (retrieve and fetching.) 
 
 5) in rag 3 problems 
-    
+    here only a) problem remains. 
+
+6) in rag 4 everything is solved. 
