@@ -1,0 +1,15 @@
+1) In rag if you want to trace every step of rag like pdf loading, chunking, splitting you need to use "from langsmith import traceable" library and perform decorators on it. 
+
+2) runs (every step of trace), trace (one experiment of project (one time run)), project (group of traces/dashboard). 
+
+3) in rag 1 there are multiple problems : 
+    a) it is rerruning fully again and not loading from retriving step, like loading pdf again, splitting again 
+
+    b) unable to trace functions which donot include .invoke() for example loading pdf, store in vector db this is not traced by rag here 
+
+4) in rag 2 problems : 
+    a) problem a is still there, problem b is solved 
+    b) but there are individual trace for same pipeline like (1 trace for load, chunk, split and store) 1 trace for (retrieve and fetching.) 
+
+5) in rag 3 problems 
+    
