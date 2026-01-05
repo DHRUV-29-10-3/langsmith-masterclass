@@ -2,17 +2,22 @@
 
 import operator
 from typing import TypedDict, Annotated, List
-
+import os
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 
 from langsmith import traceable
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import StateGraph, START, END
 
-# ---------- Setup ----------
 load_dotenv()
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+# ---------- Setup ----------
+os.environ["LANGHAIN_PROJECT"] = "LANGGRAPH_UPSC_ESSAY_EVALUATION"
+model = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",  # or "gpt-4o-mini"
+    temperature=0,
+    api_key=os.getenv("GOOGLE_API_KEY")  # Uses GOOGLE_API_KEY from environment
+)
 
 # ---------- Structured schema & model ----------
 class EvaluationSchema(BaseModel):

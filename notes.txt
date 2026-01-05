@@ -16,3 +16,5 @@
     here only a) problem remains. 
 
 6) in rag 4 everything is solved. 
+
+7) when we trace langgraph in langsmith every node in langrraph became run in langsmith and every full execution became trace. 
